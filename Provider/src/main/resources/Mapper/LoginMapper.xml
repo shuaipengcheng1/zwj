@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.misaka.provider.Mapper.LoginMapper">
+    <select id="Login" resultType="com.misaka.Domain.User">
+        select *
+        from user
+        where username = #{username} and password=#{password}
+  </select>
+  <insert id="Submit">
+      INSERT into user (username,password) values (#{username},#{password})
+  </insert>
+  <insert id="Icon_Submit">
+    INSERT into user (username,password,icon_src) values (#{username},#{password},#{url})
+  </insert>
+    <select id="Same" resultType="com.misaka.Domain.User">
+        select *
+        from user
+        where username = #{username}
+    </select>
+</mapper>
