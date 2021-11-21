@@ -32,6 +32,8 @@ public class BaseContrller {
     @RequestMapping(value = "/page")
     public Object Page(int pages, HttpServletResponse response) {
 //设置跨域
+        response.setHeader("Access-Control-Allow-Headers","*");
+
         response.setHeader("Access-Control-Allow-Origin", "*");
 
         return vipService.GetVip(pages);

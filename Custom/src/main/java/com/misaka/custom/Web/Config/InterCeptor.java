@@ -1,5 +1,6 @@
 package com.misaka.custom.Web.Config;
 
+import com.misaka.custom.Web.Handler.LoginHandler;
 import com.misaka.custom.Web.Handler.VipServiceHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -10,5 +11,6 @@ public class InterCeptor implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new VipServiceHandler()).addPathPatterns("/page");
+        registry.addInterceptor(new LoginHandler()).addPathPatterns("/home");
     }
 }

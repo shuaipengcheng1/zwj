@@ -1,0 +1,6 @@
+## 后端跨域请求cookie
+一般设置一下setHeader就ok 注意不能设origin为*
+
+## 前端请求
+同域名可以使用withCriditals
+一般使用proxy代理
